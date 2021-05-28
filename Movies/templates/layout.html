@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>Final Project DB</title>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <div id="side-left-container" class="bg-primary">
+            <div class="logo pt-3 pb-2 ps-3 d-flex align-items-center font-weight-bold">
+                <i class="bi bi-film me-3 fs-3"></i><h4 class="fs-4 text-light fw-bold m-0">MOVIES DB</h4>
+            </div>
+            <hr class="line mt-1 mb-2 mx-auto">
+            <div class="menu">
+                <a href="#" class="d-flex align-items-center text-light p-3">
+                    <i class="bi bi-camera-video-fill me-2"></i><span class="fs-6 ms-1">Primera parte</span> 
+                </a>
+                <a href="#" class="d-flex align-items-center text-light p-3">
+                    <i class="bi bi-bar-chart-fill me-2"></i><span class="fs-6 ms-1">Segunda parte</span> 
+                </a>
+                <!-- <a class="d-block fs-6 p-3 text-light" href="#"><i class="bi bi-bar-chart-fill pe-2"></i> Segunda parte</a> -->
+            </div>
+        </div>
+        <div id="content-container">
+            <div class="shadow-sm" id="search-container">
+
+            </div>
+        </div>
+    </div>
+
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+
+</body>
+
+<script></script>
+{% block extrajs %}
+{% endblock %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+</html>

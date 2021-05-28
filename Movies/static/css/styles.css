@@ -1,0 +1,69 @@
+:root{
+    /* E50914 */
+    --primary: black;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+
+body{
+    overflow: hidden;
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Nunito Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+#side-left-container{
+    background-color: var(--primary) !important;
+    color: white;
+    min-height: 100vh;
+}
+
+#side-left-container .line{
+    width: 12rem;
+    opacity: 0.40;
+}
+
+#side-left-container .menu{
+    width: 14rem;
+}
+
+#side-left-container .menu a span{
+    opacity: 0.80;
+    transition: all 300ms;
+}
+
+#side-left-container .menu a i{
+    opacity: 0.60;
+    transition: all 300ms;
+}
+
+#side-left-container .menu a:hover i{
+    opacity: 1;
+}
+
+#side-left-container .menu a:hover span{
+    opacity: 1;
+}
+
+/* #side-left-container .menu a i:hover{
+    opacity: 0.60;
+} */
+
+/* #side-left-container .menu a:hover ~ #prueba{
+    opacity: 1;
+} */
+#search-container{
+    width: 100%;
+    background-color: var(--light);
+    height: 4.375rem;
+}
+
+#content-container{
+    width: 100%;
+    background-color: var(--grey);
+}
