@@ -12,4 +12,4 @@ class ViewEjemplos(ListView):
         return render(request, "users_manager.html", {'movies': objetos})
 
 class ViewMain(TemplateView):
-    template_name = "layout.html"
+    template_name = "part_one.html"

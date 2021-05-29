@@ -1,6 +1,16 @@
+/* html{
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    overflow-y: scroll;
+} */
+
 :root{
     /* E50914 */
-    --primary: black;
+    --primary: #BD0600;
+    --secondary: #E50914;
+    --lightbutton: rgba(229, 9, 20, 0.05);
+    --lightshadow: inset 0 0 0 0.12rem rgba(229, 9, 20, 0.25);
     --light: #ffffff;
     --grey: #efefef;
 }
@@ -20,7 +30,8 @@ a:hover{
 #side-left-container{
     background-color: var(--primary) !important;
     color: white;
-    min-height: 100vh;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
 }
 
 #side-left-container .line{
@@ -33,12 +44,12 @@ a:hover{
 }
 
 #side-left-container .menu a span{
-    opacity: 0.80;
-    transition: all 300ms;
+    opacity: 0.60;
+    transition: all 400ms;
 }
 
 #side-left-container .menu a i{
-    opacity: 0.60;
+    opacity: 0.50;
     transition: all 300ms;
 }
 
@@ -50,6 +61,10 @@ a:hover{
     opacity: 1;
 }
 
+.sel{
+    opacity: 1 !important;
+}
+
 /* #side-left-container .menu a i:hover{
     opacity: 0.60;
 } */
@@ -57,13 +72,128 @@ a:hover{
 /* #side-left-container .menu a:hover ~ #prueba{
     opacity: 1;
 } */
-#search-container{
+#side-right-container{
     width: 100%;
+    background-color: var(--grey);
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+#side-right-container #search-container{
+    margin-left: 14rem;
     background-color: var(--light);
     height: 4.375rem;
 }
+#content-div{
+    margin-top: 4.5rem;
+}
 
-#content-container{
-    width: 100%;
-    background-color: var(--grey);
+/* #search-container .d-flex select{
+    width: 10rem;
+    background-color: #f8f2f2;
+    border: none;
+    transition: all 300ms;
+} */
+
+#search-container #select-container{
+    width: 18rem;
+}
+
+#search-container #search-input-container{
+    width: 22rem;
+}
+
+#search-container #select-container label{
+    border: none;
+    background-color: var(--secondary);
+    color: white;
+}
+
+#search-container #select-container select{
+    border: none;
+    transition: all 300ms;
+    color: #6C757D;
+    background-color: var(--lightbutton);
+}
+
+.inside-focus:focus{
+    border-color: var(--secondary);
+    box-shadow: var(--lightshadow);
+}
+
+#search-input-container div button{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: var(--secondary);
+    border: none;
+    transition: all 300ms;
+}
+
+#search-input-container div button:hover{
+    background-color: var(--primary);
+}
+
+#search-input-container div button:focus{
+    box-shadow: none;
+}
+
+#search-input-container input{
+    background-color: rgba(229, 9, 20, 0.05) !important;
+}
+
+.card-header{
+    background-color: var(--secondary);
+    color: white;
+}
+
+
+#table-container{
+    width: 80%;
+}
+#tablita{
+    margin-bottom: 23px !important;
+}
+table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_desc:after {
+    display: none;
+}
+table.dataTable>thead .sorting:after, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_desc_disabled:after {
+    display: none;
+}
+table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc_disabled:before {
+    display: none;
+}
+#tablita_length label select:focus{
+    box-shadow: none;
+}
+#tablita_filter{
+    display: none;
+}
+#tablita_paginate .pagination ul li a:focus{
+    box-shadow: none !important;
+}
+#tablita_paginate .pagination .page-item.active .page-link{
+    box-shadow: none !important;
+}
+.page-item:first-child .page-link:focus {
+    box-shadow: none !important;
+}
+.page-item:last-child .page-link {
+    box-shadow: none !important;
+}
+.page-item:not(:first-child) .page-link:focus {
+    box-shadow: none !important;
+}
+.page-item a {
+    color: var(--primary);
+}
+.page-item a:hover{
+    color: var(--primary);
+}
+.page-item.active .page-link {
+    background-color: var(--secondary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+}
+.disabled a{
+    color: #6c757d !important;
 }

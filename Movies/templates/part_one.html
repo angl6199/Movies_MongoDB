@@ -1,0 +1,149 @@
+{% extends 'layout.html' %}
+
+{% block options %}
+<a href="{% url 'main' %}" class="d-flex align-items-center text-light p-3">
+    <i class="bi bi-camera-video-fill me-2 sel"></i><span class="fs-6 ms-1 sel">Custom search</span>
+</a>
+<a href="{% url 'main' %}" class="d-flex align-items-center text-light p-3">
+    <i class="bi bi-bar-chart-fill me-2"></i><span class="fs-6 ms-1">Statistics</span>
+</a>
+{% endblock %}
+
+{% block topbar %}
+<div id="select-container" class="d-flex input-group ms-5 me-4">
+    <label class="input-group-text" for="search-fields">Search category</label>
+    <select class="form-select inside-focus" name="search-fields" id="search-fields">
+        <option value="Choose one...">Choose one...</option>
+        <option value="Movie name">Movie name</option>
+        <option value="Actor">Actor</option>
+        <option value="TV show">TV show</option>
+    </select>
+</div>
+<div id="search-input-container" class="input-group ms-5">
+    <input type="text" class="form-control bg-light border-0 small inside-focus" placeholder="Search...">
+    <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="card mx-4 my-4 border-0 shadow-sm">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+            <h5 class="card-title">Hola</h5>
+            <p class="card-text">Esto es una prueba</p>
+            <div class="mx-auto">
+                <table id="tablita" class="table">
+                    <thead >
+                        <tr class="rounded-top">
+                            <th>Title</th>
+                            <th>Director</th>
+                            <th>Cast</th>
+                            <th>Countries</th>
+                            <th>Release Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                        <tr>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                            <td class=''>Ejemplo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}
+
+{% block extrajs %}
+<script>
+    $(document).ready(function () {
+        $('#tablita').DataTable();
+    });
+</script>
+{% endblock %}
