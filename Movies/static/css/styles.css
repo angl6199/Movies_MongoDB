@@ -20,6 +20,9 @@ body{
     /* font-family: 'Roboto Slab', serif; */
     font-family: 'Nunito Sans', sans-serif;
 }
+select option:hover{
+    background-color: var(--secondary) !important;
+}
 a{
     text-decoration: none;
 }
@@ -196,4 +199,30 @@ table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:before
 }
 .disabled a{
     color: #6c757d !important;
+}
+
+.error-card{
+    width: 40%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.error-card i{
+    color: var(--secondary);
+}
+.error-card div h5{
+    color: var(--secondary);
+}
+#loading-content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+.statistics-card{
+    /* width: 60%; */
+}
+.card-body h5{
+    color: var(--primary);
 }

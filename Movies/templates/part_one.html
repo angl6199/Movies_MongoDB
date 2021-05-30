@@ -1,149 +1,256 @@
 {% extends 'layout.html' %}
 
+{% block extralinks %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.css"/>
+{% endblock %}
+
 {% block options %}
-<a href="{% url 'main' %}" class="d-flex align-items-center text-light p-3">
+<a href="{% url 'movies' %}" class="d-flex align-items-center text-light p-3">
     <i class="bi bi-camera-video-fill me-2 sel"></i><span class="fs-6 ms-1 sel">Custom search</span>
 </a>
-<a href="{% url 'main' %}" class="d-flex align-items-center text-light p-3">
+<a href="{% url 'statistics' %}" class="d-flex align-items-center text-light p-3">
     <i class="bi bi-bar-chart-fill me-2"></i><span class="fs-6 ms-1">Statistics</span>
 </a>
 {% endblock %}
 
 {% block topbar %}
-<div id="select-container" class="d-flex input-group ms-5 me-4">
-    <label class="input-group-text" for="search-fields">Search category</label>
-    <select class="form-select inside-focus" name="search-fields" id="search-fields">
-        <option value="Choose one...">Choose one...</option>
-        <option value="Movie name">Movie name</option>
-        <option value="Actor">Actor</option>
-        <option value="TV show">TV show</option>
-    </select>
-</div>
-<div id="search-input-container" class="input-group ms-5">
-    <input type="text" class="form-control bg-light border-0 small inside-focus" placeholder="Search...">
-    <div class="input-group-append">
-        <button class="btn btn-primary" type="submit">
-            <i class="bi bi-search"></i>
-        </button>
+<form class="d-flex" action="" method="GET">
+    <div id="select-container" class="d-flex input-group ms-5 me-4">
+        <label class="input-group-text" for="search-fields">Search category</label>
+        <select class="form-select inside-focus" name="search-fields" id="search-fields">
+            <option value="Choose one...">Choose one...</option>
+            <option value="Movie name">Movie name</option>
+            <option value="Actor">Actor</option>
+            <option value="TV show">TV show</option>
+        </select>
     </div>
-</div>
+    <div id="search-input-container" class="input-group ms-5">
+        <input type="text" id="search-input" name="search-input" class="form-control bg-light border-0 small inside-focus" placeholder="Search...">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
 {% endblock %}
 
 {% block content %}
-    <div class="card mx-4 my-4 border-0 shadow-sm">
-        <h5 class="card-header">Featured</h5>
-        <div class="card-body">
-            <h5 class="card-title">Hola</h5>
-            <p class="card-text">Esto es una prueba</p>
-            <div class="mx-auto">
-                <table id="tablita" class="table">
-                    <thead >
-                        <tr class="rounded-top">
-                            <th>Title</th>
-                            <th>Director</th>
-                            <th>Cast</th>
-                            <th>Countries</th>
-                            <th>Release Year</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                        <tr>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                            <td class=''>Ejemplo</td>
-                        </tr>
-                    </tbody>
-                </table>
+<span>
+    {% if movies %}
+        {% if category == "Choose one..." or category == Null %}
+            <div class="card mx-4 my-4 border-0 shadow-sm">
+                <h5 class="card-header">Netflix Content</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Showing All Content</h5>
+                    <p class="card-text">You are now viewing Kaggle's Netflix database.</p>
+                    <div class="mx-auto">
+                        <table id="tablita" class="table">
+                            <thead>
+                                <tr class="rounded-top">
+                                    <th>Title</th>
+                                    <th>Director</th>
+                                    <th>Cast</th>
+                                    <th>Countries</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for movie in movies %}
+                                <tr>
+                                    <td class=''>{{movie.title}}</td>
+                                    <td class=''>{{movie.director}}</td>
+                                    <td class=''>{{movie.cast}}</td>
+                                    <td class=''>{{movie.country}}</td>
+                                    <td class=''>{{movie.release_year}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        {% elif category == "Movie name" %}
+            <div class="card mx-4 my-4 border-0 shadow-sm">
+                <h5 class="card-header">Movies</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Showing Movies with title "{{searched_input}}" </h5>
+                    <p class="card-text">You are now viewing every Movie with title "{{searched_input}}" stored in Kaggle's Netflix database.</p>
+                    <div class="mx-auto">
+                        <table id="tablita" class="table">
+                            <thead>
+                                <tr class="rounded-top">
+                                    <th>Title</th>
+                                    <th>Director</th>
+                                    <th>Cast</th>
+                                    <th>Countries</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for movie in movies %}
+                                <tr>
+                                    <td class=''>{{movie.title}}</td>
+                                    <td class=''>{{movie.director}}</td>
+                                    <td class=''>{{movie.cast}}</td>
+                                    <td class=''>{{movie.country}}</td>
+                                    <td class=''>{{movie.release_year}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        {% elif category == "Actor" %}
+            <div class="card mx-4 my-4 border-0 shadow-sm">
+                <h5 class="card-header">Movies</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Showing {{searched_input}}'s Movies</h5>
+                    <p class="card-text">You are now viewing every movie where {{searched_input}} has been part of the cast in Kaggle's Netflix database.</p>
+                    <div class="mx-auto">
+                        <table id="tablita" class="table">
+                            <thead>
+                                <tr class="rounded-top">
+                                    <th>Actor</th>
+                                    <th>Type</th>
+                                    <th>Tilte</th>
+                                    <th>Cast</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for movie in movies %}
+                                <tr>
+                                    <td class=''>{{searched_input}}</td>
+                                    <td class=''>{{movie.type}}</td>
+                                    <td class=''>{{movie.title}}</td>
+                                    <td class=''>{{movie.cast}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    {% elif category == "Actor" %}
+        <div class="card my-4 border-0 shadow-sm error-card">
+            <h5 class="card-header">Movies</h5>
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-eye-slash-fill me-2"></i>No match for: {{searched_input}}</h5>
+                <p class="card-text">There are no movies with {{searched_input}} as part of the cast in Kaggle's Netflix database.</p>
             </div>
         </div>
-    </div>
-    
+
+    {% elif not movies and category != "TV show" %}
+        <div class="card my-4 border-0 shadow-sm error-card">
+            <h5 class="card-header">Movies</h5>
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-eye-slash-fill me-2"></i>No match for: {{searched_input}}</h5>
+                <p class="card-text">There are no Movies with {{searched_input}} as part of the cast in Kaggle's Netflix database.</p>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if shows %}
+        {% if category == "Actor" %}
+            <div class="card mx-4 my-4 border-0 shadow-sm">
+                <h5 class="card-header">TV Shows</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Showing {{searched_input}}'s TV Shows</h5>
+                    <p class="card-text">You are now viewing every TV Show where {{searched_input}} has been part of the cast in Kaggle's Netflix database.</p>
+                    <div class="mx-auto">
+                        <table id="tablita" class="table">
+                            <thead>
+                                <tr class="rounded-top">
+                                    <th>Actor</th>
+                                    <th>Type</th>
+                                    <th>Tilte</th>
+                                    <th>Cast</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for show in shows %}
+                                <tr>
+                                    <td class=''>{{searched_input}}</td>
+                                    <td class=''>{{show.type}}</td>
+                                    <td class=''>{{show.title}}</td>
+                                    <td class=''>{{show.cast}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        {% elif category == "TV show" %}
+            <div class="card mx-4 my-4 border-0 shadow-sm">
+                <h5 class="card-header">TV Shows</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Showing TV Shows with title "{{searched_input}}" </h5>
+                    <p class="card-text">You are now viewing every TV Show with title "{{searched_input}}" stored in Kaggle's Netflix database.</p>
+                    <div class="mx-auto">
+                        <table id="tablita" class="table">
+                            <thead>
+                                <tr class="rounded-top">
+                                    <th>Title</th>
+                                    <th>Director</th>
+                                    <th>Cast</th>
+                                    <th>Countries</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for show in shows %}
+                                <tr>
+                                    <td class=''>{{show.title}}</td>
+                                    <td class=''>{{show.director}}</td>
+                                    <td class=''>{{show.cast}}</td>
+                                    <td class=''>{{show.country}}</td>
+                                    <td class=''>{{show.release_year}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    {% elif category == "Actor" %}
+        <div class="card my-4 border-0 shadow-sm error-card">
+        <h5 class="card-header">TV Shows</h5>
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-eye-slash-fill me-2"></i>No match for: {{searched_input}}</h5>
+                <p class="card-text">There are no TV Shows with {{searched_input}} as part of the cast in Kaggle's Netflix database.</p>
+            </div>
+        </div>
+
+    {% elif not shows %}
+        {% if category != "Movie name" and category != None %}
+        <div class="card my-4 border-0 shadow-sm error-card">
+            <h5 class="card-header">TV Shows</h5>
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-eye-slash-fill me-2"></i>No match for: {{searched_input}}</h5>
+                    <p class="card-text">There are no TV Shows with {{searched_input}} as part of the cast in Kaggle's Netflix database.</p>
+                </div>
+        </div>
+        {% endif %}
+    {% endif %}
+</span>
+
 
 {% endblock %}
 
 {% block extrajs %}
-<script>
-    $(document).ready(function () {
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>
+<script type="text/javascript">
+
         $('#tablita').DataTable();
-    });
+
 </script>
 {% endblock %}
