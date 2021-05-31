@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block options %}
-<a href="{% url 'movies' %}" class="d-flex align-items-center text-light p-3">
+<a href="{% url 'movies' 0 %}" class="d-flex align-items-center text-light p-3">
     <i class="bi bi-camera-video-fill me-2 sel"></i><span class="fs-6 ms-1 sel">Custom search</span>
 </a>
 <a href="{% url 'statistics' %}" class="d-flex align-items-center text-light p-3">
@@ -32,13 +32,18 @@
             </button>
         </div>
     </div>
+    <div class="d-flex align-items-center ms-5 ps-5">
+        <a class="align-middle d-flex align-items-center justify-content-center rounded" style="background-color: var(--secondary); height: 100%; width: 2.3rem;" href="{% url 'movies' 0 %}"><i style="color: white; text-align: center;" class="bi bi-house-door"></i></a>
+    </div>
 </form>
 {% endblock %}
 
 {% block content %}
+{% load static %}
 <span>
     {% if movies %}
         {% if category == "Choose one..." or category == Null %}
+            {% if all is True %}
             <div class="card mx-4 my-4 border-0 shadow-sm">
                 <h5 class="card-header">Netflix Content</h5>
                 <div class="card-body">
@@ -70,6 +75,23 @@
                     </div>
                 </div>
             </div>
+            
+            {% else %}
+            <div class="card mb-3 mx-auto shadow" style="max-width: 840px; margin-top: 4rem;">
+                <div class="row g-0">
+                  <div class="col-md-7">
+                    <img class="shadow" style="width: 100%; height: 100%;" src="{% static 'images/netflix.png' %}" alt="">
+                  </div>
+                  <div class="col-md-5">
+                    <div class="card-body">
+                      <h5 class="card-title">Welcome to Movies DB!</h5>
+                      <p class="card-text">Here you will find Netflix movies and TV Shows data from Kaggle's database. Feel free to search specific data with the <span class="fw-bold">upper search section</span>. </p>
+                      <a id="all-movies" class="card-text" href="{% url 'movies' 1 %}"><small class="text-muted">Click to get all data without searching.</small></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
         
         {% elif category == "Movie name" %}
             <div class="card mx-4 my-4 border-0 shadow-sm">
@@ -116,7 +138,7 @@
                                 <tr class="rounded-top">
                                     <th>Actor</th>
                                     <th>Type</th>
-                                    <th>Tilte</th>
+                                    <th>Title</th>
                                     <th>Cast</th>
                                 </tr>
                             </thead>
@@ -249,8 +271,11 @@
 {% block extrajs %}
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>
 <script type="text/javascript">
-
         $('#tablita').DataTable();
+
+        document.getElementById('all-movies').onclick = function(){
+            window.alert("Please consider that all data inside table movies will take a few seconds to render due to its length.")
+        }
 
 </script>
 {% endblock %}

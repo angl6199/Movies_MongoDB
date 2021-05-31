@@ -19,6 +19,6 @@ import Movies.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('movies/', Movies.views.ViewEjemplos.as_view(), name='movies'),
+    path('movies/<int:value>', Movies.views.ViewSearch.as_view(), name='movies'),
     path('statistics/', Movies.views.ViewStatistics.as_view(), name='statistics'),
 ]

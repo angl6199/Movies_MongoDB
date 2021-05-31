@@ -5,12 +5,13 @@ from .models import Movies
 from django.db.models import Q
 
 # Create your views here.
-class ViewEjemplos(ListView):
+class ViewSearch(ListView):
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, value, *args, **kwargs):
         field = request.GET.get('search-fields')
         search_input = request.GET.get('search-input')
         count = 0
+        all = False
         if(search_input!=None and field!="Choose one..."):
             if field=="Movie name":
                 movies = Movies.objects.filter(Q(title__icontains = search_input) & Q(type = "Movie"))
@@ -21,12 +22,16 @@ class ViewEjemplos(ListView):
             if field=="TV show":
                 movies = None
                 shows = Movies.objects.filter(Q(title__icontains = search_input) & Q(type = "TV Show"))
+        elif (value == 1):
+                all = True
+                movies = Movies.objects.all()
+                shows = None
         else:
-            movies = Movies.objects.all()
+            movies = "No movies"
             count = Movies.objects.all().count()
             shows = None
         
-        return render(request, "part_one.html", {'movies': movies, 'category': field, 'searched_input': search_input, 'shows': shows, 'count':count})
+        return render(request, "search_movies.html", {'movies': movies, 'category': field, 'searched_input': search_input, 'shows': shows, 'count':count, 'all':all})
 
 class ViewStatistics(TemplateView):
     def get(self, request, *args, **kwargs):
@@ -35,8 +40,8 @@ class ViewStatistics(TemplateView):
 
         if(search_input!=None and field!="Choose one..."):
             if field=="Country":
-                validar = Movies.objects.filter(Q(country = search_input) & Q(type = "Movie")).exists()
-                n1 = Movies.objects.filter(Q(country = search_input) & Q(type = "Movie")).count()
+                validar = Movies.objects.filter(Q(country__icontains = search_input) & Q(type = "Movie")).exists()
+                n1 = Movies.objects.filter(Q(country__icontains = search_input) & Q(type = "Movie")).count()
                 n2 = Movies.objects.filter(Q(type = "Movie")).count() - n1
                 l1 = search_input
                 l2 = "Other countries"
