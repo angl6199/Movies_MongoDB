@@ -17,4 +17,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Movies_MongoDB.settings.product
 
 from dj_static import Cling
 
+
 application = Cling(get_wsgi_application)
