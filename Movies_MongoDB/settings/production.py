@@ -9,11 +9,17 @@ ALLOWED_HOSTS = ['moviesmongodb.herokuapp.com']
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-        'default': {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': "finalp",
+    }
+}
+DATABASES = {
+    'default': {
         'ENGINE': 'djongo',
         'NAME': 'movies',
-        'HOST': 'mongodb+srv://admin:asdf@clustermovies.b4rru.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-        'USER': 'admin',
-        'PASSWORD': 'asdf',
+        'CLIENT': {
+           'host': 'mongodb+srv://admin:asdf@clustermovies.b4rru.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+        }
     }
 }
