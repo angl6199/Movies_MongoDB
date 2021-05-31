@@ -22,10 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's8o@!$(i+$s66bbw=5bo$j^)!b#7m93z%502jlvm_*9l2qi#by'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -70,16 +67,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Movies_MongoDB.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': "finalp",
-    }
-}
 
 
 # Password validation
