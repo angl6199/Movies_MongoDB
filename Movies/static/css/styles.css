@@ -13,6 +13,7 @@
     --lightshadow: inset 0 0 0 0.12rem rgba(229, 9, 20, 0.25);
     --light: #ffffff;
     --grey: #efefef;
+    --lightdisabled: rgba(128, 128, 128, 0.25)
 }
 
 body{
@@ -87,6 +88,11 @@ a:hover{
     background-color: var(--light);
     height: 4.375rem;
 }
+
+.input-not-active{
+
+}
+
 #content-div{
     margin-top: 4.5rem;
 }
@@ -103,7 +109,7 @@ a:hover{
 }
 
 #search-container #search-input-container{
-    width: 22rem;
+    width: 16rem;
 }
 
 #search-container #select-container label{
@@ -141,7 +147,9 @@ a:hover{
 }
 
 #search-input-container input{
-    background-color: rgba(229, 9, 20, 0.05) !important;
+    background-color: rgba(229, 9, 20, 0.05);
+    color: #6C757D;
+    transition: all 300ms;
 }
 
 .card-header{

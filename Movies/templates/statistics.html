@@ -14,25 +14,35 @@
 {% endblock %}
 
 {% block topbar %}
-<form class="d-flex" action="" method="GET">
-    <div id="select-container" class="d-flex input-group ms-5 me-4">
-        <label class="input-group-text" for="search-fields">Search category</label>
-        <select class="form-select inside-focus" name="search-fields" id="search-fields">
-            <option value="Choose one...">Choose one...</option>
-            <option value="Country">Country</option>
-            <option value="Release year">Release year</option>
-        </select>
-    </div>
-    <div id="search-input-container" class="input-group ms-5">
-        <input type="text" id="search-input" name="search-input" class="form-control bg-light border-0 small inside-focus" placeholder="Search...">
-        <div class="input-group-append">
-            <button class="btn btn-primary" type="submit">
-                <i class="bi bi-search"></i>
-            </button>
+<form class="d-flex" style="width: 100%;" action="" method="GET">
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <div style="" class="d-flex justify-content-evenly">
+                    <div id="select-container" class="d-flex input-group">
+                        <label class="input-group-text" for="search-fields">Search category</label>
+                        <select class="form-select inside-focus" name="search-fields" id="search-fields">
+                            <option value="Choose one...">Choose one...</option>
+                            <option value="Country">Country</option>
+                            <option value="Release year">Release year</option>
+                        </select>
+                    </div>
+                    <div id="search-input-container" class="input-group">
+                        <input required type="text" id="search-input" name="search-input" class="form-control border-0 small inside-focus" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button id="search-but" class="btn btn-primary" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div style="height: 100%;" class="justify-content-end d-flex align-items-center">
+                    <a class="align-middle d-flex align-items-center justify-content-center rounded" style="background-color: var(--secondary); height: 100%; width: 2.3rem; margin-right: 1rem;" href="{% url 'movies' 0 %}"><i style="color: white; text-align: center; font-size: 1.2rem;" class="bi bi-house-door"></i></a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="d-flex align-items-center ms-5 ps-5">
-        <a class="align-middle d-flex align-items-center justify-content-center rounded" style="background-color: var(--secondary); height: 100%; width: 2.3rem;" href="{% url 'movies' 0 %}"><i style="color: white; text-align: center;" class="bi bi-house-door"></i></a>
     </div>
 </form>
 {% endblock %}
@@ -44,49 +54,51 @@
                 <h5 class="card-header">Netflix Content <i class="ms-1 bi bi-file-bar-graph"></i></h5>
                 <div class="card-body d-flex flex-row">
                     <div>
-                        <h5 class="card-title">Movies vs TV Shows</h5>
-                        <p class="card-text">Kaggle's Netflix database data:</p>
-                        <span class="">- {{l1}} : {{n1}}</span><br>
-                        <span class="">- {{l2}} : {{n2}}</span>
+                        <h5 class="card-title fs-2">Movies vs TV Shows</h5>
+                        <p class="card-text fs-5 mt-3 mb-5">Kaggle's Netflix database data:</p>
+                        <span class="fs-5 fw-bold">- {{l1}} : {{n1}}</span><br>
+                        <span class="fs-5 fw-bold">- {{l2}} : {{n2}}</span>
                     <hr style = "height : 2px;color:var(--primary)">
                     </div>
-                    <div class="ms-5">
+                    <div style="width: 25rem;" class="ms-5">
                     <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
                     </div>
                 </div>
             </div>
+
         {% elif category == "Country" %}
-        <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
-            <h5 class="card-header">Movies of a given country <i class="ms-1 bi bi-file-bar-graph"></i></h5>
-            <div class="card-body d-flex flex-row">
-                <div>
-                    <h5 class="card-title">Movies in: {{searched_input}}</h5>
-                    <p class="card-text">Kaggle's Netflix database data:</p>
-                    <span class="">- {{l1}} : {{n1}}</span><br>
-                    <span class="">- {{l2}} : {{n2}}</span>
-                <hr style = "height : 2px;color:var(--primary)">
-                </div>
-                <div class="ms-5">
-                <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
+            <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
+                <h5 class="card-header">Movies of a given country <i class="ms-1 bi bi-file-bar-graph"></i></h5>
+                <div class="card-body d-flex flex-row">
+                    <div>
+                        <h5 class="card-title fs-2">Movies in: {{searched_input}}</h5>
+                        <p class="card-text fs-5 mt-3 mb-5">Kaggle's Netflix database data:</p>
+                        <span class="fs-5 fw-bold">- {{l1}} : {{n1}}</span><br>
+                        <span class="fs-5 fw-bold">- {{l2}} : {{n2}}</span>
+                    <hr style = "height : 2px;color:var(--primary)">
+                    </div>
+                    <div style="width: 25rem;" class="ms-5">
+                    <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
+                    </div>
                 </div>
             </div>
-        </div>
+
         {% elif category == "Release year" %}
-        <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
-            <h5 class="card-header">TV Shows of a given year <i class="ms-1 bi bi-file-bar-graph"></i></h5>
-            <div class="card-body d-flex flex-row">
-                <div>
-                    <h5 class="card-title">TV Shows released in: {{searched_input}}</h5>
-                    <p class="card-text">Kaggle's Netflix database data:</p>
-                    <span class="">- {{l1}} : {{n1}}</span><br>
-                    <span class="">- {{l2}} : {{n2}}</span>
-                <hr style = "height : 2px;color:var(--primary)">
-                </div>
-                <div class="ms-5">
-                <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
+            <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
+                <h5 class="card-header">TV Shows of a given year <i class="ms-1 bi bi-file-bar-graph"></i></h5>
+                <div class="card-body d-flex flex-row">
+                    <div>
+                        <h5 class="card-title fs-2">TV Shows of: {{searched_input}}</h5>
+                        <p class="card-text fs-5 mt-3 mb-5">Kaggle's Netflix database data:</p>
+                        <span class="fs-5 fw-bold">- {{l1}} : {{n1}}</span><br>
+                        <span class="fs-5 fw-bold">- {{l2}} : {{n2}}</span>
+                    <hr style = "height : 2px;color:var(--primary)">
+                    </div>
+                    <div style="width: 25rem;" class="ms-5">
+                    <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endif %}
         
     {% elif not validar %}
@@ -113,7 +125,9 @@
 {% endblock %}
 
 {% block extrajs %}
+{% load static %}
 <script type="text/javascript" src="https://cdnjs.com/libraries/Chart.js"></script>
+<script src="{% static 'js/mainscript.js' %}"></script>
 <script type="text/javascript">
     console.log('{{validar}}')
     console.log('{{n1}}')
