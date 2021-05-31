@@ -31,7 +31,7 @@
                     <div id="search-input-container" class="input-group">
                         <input required type="text" id="search-input" name="search-input" class="form-control border-0 small inside-focus" placeholder="Search...">
                         <div class="input-group-append">
-                            <button id="search-but" class="btn btn-primary" type="submit">
+                            <button id="search-but" class="btn btn-primary primary-hov" type="submit">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-3">
                 <div style="height: 100%;" class="justify-content-end d-flex align-items-center">
-                    <a class="align-middle d-flex align-items-center justify-content-center rounded" style="background-color: var(--secondary); height: 100%; width: 2.3rem; margin-right: 1rem;" href="{% url 'movies' 0 %}"><i style="color: white; text-align: center; font-size: 1.2rem;" class="bi bi-house-door"></i></a>
+                    <a class="align-middle d-flex align-items-center justify-content-center rounded primary-hov" style="background-color: var(--secondary); height: 100%; width: 2.3rem; margin-right: 1rem;" href="{% url 'movies' 0 %}"><i style="color: white; text-align: center; font-size: 1.2rem;" class="bi bi-house-door"></i></a>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                     <div class="card-body">
                       <h5 class="card-title fs-2 mb-3">Welcome to Movies DB!</h5>
                       <p class="card-text fs-5 mb-5">Here you will find Netflix movies and TV Shows data from Kaggle's database. Feel free to search specific data with the <span class="fw-bold">upper search section</span>. </p>
-                      <a id="all-movies" class="card-text mt-5" href="{% url 'movies' 1 %}"><small class="text-muted fs-5">Click to get all data without searching.</small></a>
+                      <a id="all-movies" class="card-text mt-5 secondary-hov-t" href="{% url 'movies' 1 %}"><small class="text-muted fs-5">Click to get all data without searching.</small></a>
                     </div>
                   </div>
               </div>
