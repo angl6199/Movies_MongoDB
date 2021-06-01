@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-9">
-                <div style="" class="d-flex justify-content-evenly">
+                <div class="d-flex justify-content-evenly">
                     <div id="select-container" class="d-flex input-group">
                         <label class="input-group-text" for="search-fields">Search category</label>
                         <select class="form-select inside-focus" name="search-fields" id="search-fields">
@@ -51,16 +51,16 @@
     {% if validar %}
         {% if category == "Choose one..." or searched_input is None %}
             <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
-                <h5 class="card-header">Netflix Content <i class="ms-1 bi bi-file-bar-graph"></i></h5>
+                <h5 class="card-header"><i class="me-2 bi bi-file-bar-graph"></i>Netflix Content</h5>
                 <div class="card-body d-flex flex-row">
                     <div>
-                        <h5 class="card-title fs-2">Movies vs TV Shows</h5>
-                        <p class="card-text fs-5 mt-3 mb-5">Kaggle's Netflix database data:</p>
-                        <span class="fs-5 fw-bold">- {{l1}} : {{n1}}</span><br>
-                        <span class="fs-5 fw-bold">- {{l2}} : {{n2}}</span>
+                        <h3 class="card-title">Movies vs TV Shows</h3>
+                        <p class="card-text fs-5 mt-3">Kaggle's Netflix database data:</p>
+                        <span class="fs-5">- {{l1}} : {{n1}}</span><br>
+                        <span class="fs-5">- {{l2}} : {{n2}}</span>
                     <hr style = "height : 2px;color:var(--primary)">
                     </div>
-                    <div style="width: 25rem;" class="ms-5">
+                    <div style="width: 23.5rem;" class="ms-5">
                     <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
                     </div>
                 </div>
@@ -68,16 +68,16 @@
 
         {% elif category == "Country" %}
             <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
-                <h5 class="card-header">Movies of a given country <i class="ms-1 bi bi-file-bar-graph"></i></h5>
+                <h5 class="card-header"><i class="me-2 bi bi-file-bar-graph"></i>Movies of a given country</h5>
                 <div class="card-body d-flex flex-row">
                     <div>
-                        <h5 class="card-title fs-2">Movies in: {{searched_input}}</h5>
-                        <p class="card-text fs-5 mt-3 mb-5">Kaggle's Netflix database data:</p>
-                        <span class="fs-5 fw-bold">- {{l1}} : {{n1}}</span><br>
-                        <span class="fs-5 fw-bold">- {{l2}} : {{n2}}</span>
+                        <h3 class="card-title">Movies in: {{searched_input}}</h3>
+                        <p class="card-text fs-5 mt-3">Kaggle's Netflix database data:</p>
+                        <span class="fs-5">- {{l1}} : {{n1}}</span><br>
+                        <span class="fs-5">- {{l2}} : {{n2}}</span>
                     <hr style = "height : 2px;color:var(--primary)">
                     </div>
-                    <div style="width: 25rem;" class="ms-5">
+                    <div style="width: 23.5rem;" class="ms-5">
                     <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
                     </div>
                 </div>
@@ -85,16 +85,16 @@
 
         {% elif category == "Release year" %}
             <div class="card statistics-card card mx-auto my-4 border-0 shadow-sm">
-                <h5 class="card-header">TV Shows of a given year <i class="ms-1 bi bi-file-bar-graph"></i></h5>
+                <h5 class="card-header"><i class="me-2 bi bi-file-bar-graph"></i>TV Shows of a given year </h5>
                 <div class="card-body d-flex flex-row">
                     <div>
-                        <h5 class="card-title fs-2">TV Shows of: {{searched_input}}</h5>
-                        <p class="card-text fs-5 mt-3 mb-5">Kaggle's Netflix database data:</p>
-                        <span class="fs-5 fw-bold">- {{l1}} : {{n1}}</span><br>
-                        <span class="fs-5 fw-bold">- {{l2}} : {{n2}}</span>
+                        <h3 class="card-title">TV Shows of: {{searched_input}}</h3>
+                        <p class="card-text fs-5 mt-3">Kaggle's Netflix database data:</p>
+                        <span class="fs-5">- {{l1}} : {{n1}}</span><br>
+                        <span class="fs-5">- {{l2}} : {{n2}}</span>
                     <hr style = "height : 2px;color:var(--primary)">
                     </div>
-                    <div style="width: 25rem;" class="ms-5">
+                    <div style="width: 23.5rem;" class="ms-5">
                     <canvas height="" width="" class="mt-3" id="myChart" ></canvas>
                     </div>
                 </div>

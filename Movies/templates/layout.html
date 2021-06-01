@@ -31,6 +31,66 @@
                 {% endblock %}
             </div>
             <hr class="line mt-3 mb-2 mx-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="bi bi-person-fill me-2"></i><span class="fs-6 ms-1">Developer team</span>
+            </button>
+            <hr class="line mt-2 mb-2 mx-auto">
+
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title w" style="color: var(--primary);" id="exampleModalLabel"><i class="me-1 bi bi-journal-code"></i> Developer Team</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <h5 style="color: #0055A4;">Instituto Tecnológico y de Estudios Superiores de Monterrey</h5>
+                    <hr style="color: grey;">
+                    <p class="fs-5 ms-2" style="color: grey;">Team #9 members</p>
+                    <ul style="color: rgba(128, 128, 128, 0.75);" class="container">
+                        <li class="row mt-4">
+                            <div class="col">
+                                <span class="fw-bold">Name</span>
+                            </div>
+                            <div class="col">
+                                <span class="fw-bold">School ID</span>
+                            </div>
+                        </li>
+                        <li class="row mt-2">
+                            <div class="col">
+                                Javier Arturo Flores Zavala
+                            </div>
+                            <div class="col">
+                                A01651678
+                            </div>
+                        </li>
+                        <li class="row mt-2">
+                            <div class="col">
+                                Carlos Andrés Conde Besil
+                            </div>
+                            <div class="col">
+                                A01650549
+                            </div>
+                        </li>
+                        <li class="row mt-2">
+                            <div class="col">
+                                Ángel Heredia Vázquez
+                            </div>
+                            <div class="col">
+                                A01650574
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="cls-m btn btn-secondary primary-hov" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
         <div id="side-right-container">
             <div class="d-flex fixed-top align-items-center shadow-sm" id="search-container">
